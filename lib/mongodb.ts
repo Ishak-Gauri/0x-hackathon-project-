@@ -37,7 +37,7 @@ function getMongoClient(): Promise<MongoClient> {
     serverSelectionTimeoutMS: 10000, // Increased timeout
     socketTimeoutMS: 45000,
     connectTimeoutMS: 10000,
-    bufferMaxEntries: 0,
+    // bufferMaxEntries removed because it is not supported in MongoDB Node.js driver v4+
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
@@ -111,7 +111,7 @@ export async function getDatabase(): Promise<Db> {
 export const collections = {
   users: "users",
   messages: "messages",
-  conversations: "conversations",
+  conversations: "conversations",z
   connections: "connections",
   posts: "posts",
   notifications: "notifications",

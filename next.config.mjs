@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: ['mongodb']
-  },
+  serverExternalPackages: ['mongodb'],  // moved here and renamed
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -26,4 +24,4 @@ const nextConfig = {
   }
 }
 
-export default nextConfig
+export default nextConfig;
